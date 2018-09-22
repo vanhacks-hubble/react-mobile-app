@@ -5,12 +5,14 @@ import {
   createBottomTabNavigator,
 } from 'react-navigation';
 import { sharedNavigationOptions } from './config';
-import ReportScreen from '../screens/ReportMisuse';
+import ReportScreen from '../screens/Report';
 import SpeciesScreen from '../screens/IdentifySpecies';
+import HomeScreen from '../screens/Home';
 import { colors } from '../config/styles';
 
 const ReportStack = createStackNavigator(
   {
+    Home: HomeScreen,
     Report: ReportScreen,
   },
   {
