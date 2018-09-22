@@ -8,12 +8,15 @@ import { sharedNavigationOptions } from './config';
 import ReportScreen from '../screens/Report';
 import SpeciesScreen from '../screens/IdentifySpecies';
 import HomeScreen from '../screens/Home';
+import ThankYouScreen from '../screens/ThankYou/';
 import { colors } from '../config/styles';
 
 const ReportStack = createStackNavigator(
   {
+    
     Home: HomeScreen,
     Report: ReportScreen,
+    ThankYou: ThankYouScreen,
   },
   {
     navigationOptions: ({ navigation }) => ({
