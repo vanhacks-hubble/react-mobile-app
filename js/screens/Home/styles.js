@@ -1,25 +1,27 @@
 import { StyleSheet, Dimensions } from 'react-native';
 import { colors } from '../../config/styles';
 
-const { width, height } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   root: {
     flexGrow: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.secondary,
+    justifyContent: 'space-evenly',
   },
   image: {
-    height: height * 0.4,
-    width,
-  },
-  textContainer: {
-    flex: 0.8,
-    justifyContent: 'center',
-    padding: 8,
+    height: undefined,
+    width: undefined,
+    resizeMode: 'contain',
+    flex: 0.6,
+    marginTop: 8,
   },
   text: {
-    fontSize: 16,
+    fontSize: 20,
+    color: colors.white,
     textAlign: 'center',
+  },
+  buttonText: {
+    fontSize: 20,
+    fontWeight: '600',
   },
 });
 
