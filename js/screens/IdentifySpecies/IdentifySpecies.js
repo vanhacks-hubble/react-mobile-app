@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import { View, Text } from 'react-native';
 
 const IdentifySpecies = () => {
@@ -9,5 +9,4 @@ const IdentifySpecies = () => {
   );
 };
 
-
-export default IdentifySpecies
+export default IdentifySpecies;

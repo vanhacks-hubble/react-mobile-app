@@ -1,11 +1,14 @@
-import react, {Component} from 'react'
+import React, { Component } from 'react';
 
-import IdentifySpecies from './IdentifySpecies'
+import IdentifySpecies from './IdentifySpecies';
 
-class IdentifySpeciesContainer extends Component{
-    render(){
-        return <IdentifySpecies/>
-    }
+class IdentifySpeciesContainer extends Component {
+  static navigationOptions = {
+    title: 'Species',
+  };
+  render() {
+    return <IdentifySpecies />;
+  }
 }
 
-export default IdentifySpeciesContainer
+export default IdentifySpeciesContainer;

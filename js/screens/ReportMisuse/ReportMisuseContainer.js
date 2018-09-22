@@ -1,11 +1,14 @@
-import react, {Component} from 'react'
+import React, { Component } from 'react';
 
-import ReportMisuse from './ReportMisuse'
+import ReportMisuse from './ReportMisuse';
 
-class ReportMisuseContainer extends Component{
-    render(){
-        return <ReportMisuse/>
-    }
+class ReportMisuseContainer extends Component {
+  static navigationOptions = {
+    title: 'Report',
+  };
+  render() {
+    return <ReportMisuse />;
+  }
 }
 
-export default ReportMisuseContainer
+export default ReportMisuseContainer;

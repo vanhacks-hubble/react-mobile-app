@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import { View, Text } from 'react-native';
 
 const ReportMisuse = () => {
@@ -9,5 +9,4 @@ const ReportMisuse = () => {
   );
 };
 
-
-export default ReportMisuse
+export default ReportMisuse;
