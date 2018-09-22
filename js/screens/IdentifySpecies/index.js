@@ -1,3 +1,3 @@
-import IdentifySpeciesContainer from './IdentifySpeciesContainer'
+import IdentifySpeciesContainer from './IdentifySpeciesContainer';
 
-export default IdentifySpeciesContainer
+export default IdentifySpeciesContainer;
