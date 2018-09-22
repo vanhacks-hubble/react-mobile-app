@@ -2,27 +2,38 @@ import React, { Component } from 'react';
 import Report from './Report';
 
 export default class ReportContainer extends Component {
+  static navigationOptions = {
+    title: 'Ocean Wise',
+  };
   constructor(props) {
     super(props);
 
     this.state = {
-      imageurl: '',
+      imageurl: null,
+      location: null,
+      name: null,
+      comment: null,
     };
   }
 
-  _resetImage =() => {
+  _resetImage = () => {
     this.setState({
-      imageurl: ''
-    })
-  }
-
-  _handleImage = base64 => {
-    this.setState({ imageurl: base64 });
+      imageurl: null,
+    });
   };
 
-  render() 
-  {
+  _handleImage = base64 => {
+    const imageurl = `data:image/*;base64, ${base64}`;
+    this.setState({ imageurl });
+  };
 
-    return <Report resetImage={this._resetImage} handleImage={str => this._handleImage(str)} chosenImage={this.state.imageurl} />;
+  render() {
+    return (
+      <Report
+        resetImage={this._resetImage}
+        handleImage={str => this._handleImage(str)}
+        chosenImage={this.state.imageurl}
+      />
+    );
   }
 }

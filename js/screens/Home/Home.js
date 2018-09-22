@@ -9,7 +9,10 @@ const Home = ({ navigation }) => {
     <View style={styles.root}>
       <Image
         style={styles.image}
-        source={require('../../assets/oceanWiseLogo.png')}
+        source={{
+          uri:
+            'http://seafood.ocean.org/resources/assets/images/logos/newLogo--white@2x.png',
+        }}
       />
 
       <Text style={styles.text}>See something thats not ocean wise?</Text>
