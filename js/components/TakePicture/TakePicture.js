@@ -4,20 +4,12 @@ import { StyleSheet, Text, View, Button, Image } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 
 class TakePicture extends Component {
-  state = {
-    pickedImage: null,
-  };
-  reset = () => {
-    this.setState({
-      pickedImage: null,
-    });
-  };
-  _convertBase64 = () => {
-    let convertedString = 'hello andrei';
-    // const convertedString = function to convert
-    this.props.handleImage(convertedString);
-  };
-  pickImageHandler = () => {
+  
+
+  
+
+
+  _pickImageHandler = () => {
     ImagePicker.showImagePicker(
       { title: 'Pick an Image', maxWidth: 800, maxHeight: 600 },
       res => {
@@ -26,7 +18,7 @@ class TakePicture extends Component {
         } else if (res.error) {
           console.log('Error', res.error);
         } else {
-          this._convertBase64();
+          this.props.handleImage(res.data)
         }
       },
     );
@@ -39,12 +31,12 @@ class TakePicture extends Component {
           Pick Image From Camera and Gallery{' '}
         </Text>
         <View style={styles.placeholder}>
-          <Image source={this.state.pickedImage} style={styles.previewImage} />
+          <Image source={this.props.chosenImage} style={styles.previewImage} />
         </View>
         <View style={styles.button}>
-          <Button title="Pick Image" onPress={this.pickImageHandler} />
+          <Button title="Pick Image" onPress={this._pickImageHandler} />
 
-          <Button title="Reset" onPress={this.resetHandler} />
+          <Button title="Reset" onPress={() => this.props.resetImage} />
         </View>
       </View>
     );
