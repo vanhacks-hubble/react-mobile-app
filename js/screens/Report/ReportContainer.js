@@ -13,6 +13,7 @@ export default class ReportContainer extends Component {
       businessName: null,
       location: null,
       comment: null,
+      checked: false,
     };
   }
 
@@ -30,9 +31,15 @@ export default class ReportContainer extends Component {
       businessName: null,
       location: null,
       comment: null,
+      checked: false,
     });
   };
 
+  _handleCheckBox = () => {
+    this.setState({
+      checked: !this.state.checked,
+    });
+  };
   _handleImage = base64 => {
     const imageurl = base64;
     this._setLocationData();
@@ -46,13 +53,19 @@ export default class ReportContainer extends Component {
   };
 
   _submitReport = () => {
+    let location;
+    if (this.state.checked) {
+      location = [0, 0];
+    } else {
+      location = [
+        this.state.location.coords.latitude,
+        this.state.location.coords.longitude,
+      ];
+    }
     const report = {
       image_data: this.state.imageurl,
       name: this.state.businessName,
-      location: [
-        this.state.location.coords.latitude,
-        this.state.location.coords.longitude,
-      ],
+      location,
       comment: this.state.comment,
     };
     fetch('https://vanhacks-hubble.herokuapp.com/events', {
@@ -83,6 +96,8 @@ export default class ReportContainer extends Component {
           businessName: this.state.businessName,
           comment: this.state.comment,
         }}
+        handleCheckBox={this._handleCheckBox}
+        checked={this.state.checked}
       />
     );
   }
