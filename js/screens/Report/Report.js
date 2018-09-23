@@ -29,6 +29,8 @@ class Report extends Component {
       handleInputText,
       submitReport,
       formValues,
+      handleCheckBox,
+      checked
     } = this.props;
     return (
       <View style={styles.container}>
@@ -58,6 +60,8 @@ class Report extends Component {
                 resetForm={resetForm}
                 submitReport={submitReport}
                 formValues={formValues}
+                handleCheckBox={handleCheckBox}
+                checked={checked}
               />
             </View>
           </View>

@@ -6,10 +6,7 @@ const styles = StyleSheet.create({
   root: {
     backgroundColor: 'white',
     height: height * 0.535,
-    // marginTop: height * 0.465,
-    marginTop: height * 0.498,
-
-    // justifyContent: 'flex-end',
+    marginTop: height * 0.44,
   },
   buttonContainer: {
     flexDirection: 'row',
@@ -17,6 +14,13 @@ const styles = StyleSheet.create({
   },
   textInputContainer: {
     padding: 24,
+  },
+  checkBoxText:{
+    color: colors.primary,
+    paddingVertical: 0,
+    fontWeight: '600',
+    marginRight: width*0.351
+
   },
   inputTitle: {
     color: colors.primary,

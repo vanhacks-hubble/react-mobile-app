@@ -6,13 +6,37 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
 } from 'react-native';
-// import { Button } from 'react-native-elements';
+import { CheckBox } from 'react-native-elements';
 import styles from './styles';
-const ReportForm = ({ handleInputText, resetForm, submitReport }) => {
+// import colors from '../../config/styles'
+const ReportForm = ({ handleInputText, resetForm, submitReport,  handleCheckBox, checked}) => {
   return (
     <KeyboardAvoidingView behavior="position" keyboardVerticalOffset={10}>
       <View style={styles.root}>
         <View style={styles.textInputContainer}>
+          <View
+            style={{ flexDirection: 'row', justifyContent: 'space-between' }}
+          >
+            <CheckBox
+              title={
+                <Text style={styles.checkBoxText}>
+                  Do not share my location.
+                </Text>
+              }
+              iconRight
+              containerStyle={{
+                backgroundColor: 'white',
+                padding: 10,
+                borderColor: 'white',
+                marginLeft: 0,
+                padding: 0,
+              }}
+              textStyle={{ margin: 5 }}
+              onPress={() => handleCheckBox()}
+              checked={checked}
+              checkedColor= '#265A8D'
+            />
+          </View>
           <View>
             <Text style={styles.inputTitle}>
               What is the Validated Business Name?
