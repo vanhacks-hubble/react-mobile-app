@@ -1,29 +1,39 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, ImageBackground } from 'react-native';
 import { Button } from 'react-native-elements';
 import { withNavigation } from 'react-navigation';
 import { colors } from '../../config/styles';
 
 import styles from './styles';
 
-const ThankYou = ({ slogan, image, navigation }) => {
+const ThankYou = ({ navigation }) => {
   return (
-    <View style={styles.root}>
-      <View style={styles.imageContainer}>
-        <Image source={image} style={styles.image} />
+    <ImageBackground
+      source={require('../../assets/background.jpg')}
+      style={{ width: '100%', height: '100%' }}
+    >
+      <View style={styles.root}>
+        <View style={styles.imageContainer}>
+          <Image
+            source={require('../../assets/Icon.png')}
+            style={styles.image}
+          />
+        </View>
+        <View style={styles.container}>
+          <Text style={styles.title}> Thank you for letting us know. </Text>
+          <Text style={styles.slogan}>
+            The information provided will be stored in our records
+          </Text>
+          <Button
+            title={'Back To Ocean Wise'}
+            buttonStyle={styles.button}
+            backgroundColor={colors.white}
+            onPress={() => navigation.popToTop()}
+            textStyle={styles.buttonText}
+          />
+        </View>
       </View>
-      <View style={styles.container}>
-        <Text style={styles.title}> Thank You! </Text>
-        <Text style={styles.slogan}>{slogan}</Text>
-        <Button
-          title={'Back To Home'}
-          buttonStyle={styles.button}
-          backgroundColor={colors.primary}
-          onPress={() => navigation.popToTop()}
-          textStyle={styles.buttonText}
-        />
-      </View>
-    </View>
+    </ImageBackground>
   );
 };
 

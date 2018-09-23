@@ -15,12 +15,11 @@ const styles = StyleSheet.create({
   textInputContainer: {
     padding: 24,
   },
-  checkBoxText:{
+  checkBoxText: {
     color: colors.primary,
     paddingVertical: 0,
     fontWeight: '600',
-    marginRight: width*0.351
-
+    marginRight: width * 0.351,
   },
   inputTitle: {
     color: colors.primary,
@@ -45,7 +44,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-end',
-    // paddingVertical: 20,
   },
   button: {
     width: width / 2,
@@ -55,9 +53,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 60,
-    borderWidth:1,
-    borderColor: colors.white
-
+    borderWidth: 1,
+    borderColor: colors.white,
   },
   buttonText: {
     alignItems: 'center',
