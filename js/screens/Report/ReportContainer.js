@@ -56,6 +56,7 @@ export default class ReportContainer extends Component {
       comment: this.state.comment,
     };
     console.log(report);
+    this._resetForm();
   };
 
   render() {
