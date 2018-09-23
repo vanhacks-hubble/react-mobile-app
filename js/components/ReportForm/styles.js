@@ -46,17 +46,18 @@ const styles = StyleSheet.create({
     width: width / 2,
     marginHorizontal: 0,
     paddingHorizontal: 0,
-    backgroundColor: 'blue',
+    backgroundColor: colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
     height: 60,
-    borderWidth: 1,
-    borderColor: 'white',
+    borderWidth:1,
+    borderColor: colors.white
+
   },
   buttonText: {
     alignItems: 'center',
     color: 'white',
-    fontSize: 12,
+    fontSize: 16,
   },
 });
 
