@@ -12,9 +12,9 @@ import { colors } from '../config/styles';
 
 const ReportStack = createStackNavigator(
   {
-    ThankYou: ThankYouScreen,
     Home: HomeScreen,
     Report: ReportScreen,
+    ThankYou: ThankYouScreen,
   },
   {
     navigationOptions: ({ navigation }) => ({
