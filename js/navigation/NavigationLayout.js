@@ -6,14 +6,13 @@ import {
 } from 'react-navigation';
 import { sharedNavigationOptions } from './config';
 import ReportScreen from '../screens/Report';
-import SpeciesScreen from '../screens/IdentifySpecies';
+import ResultsScreen from '../screens/ReportResults';
 import HomeScreen from '../screens/Home';
 import ThankYouScreen from '../screens/ThankYou/';
 import { colors } from '../config/styles';
 
 const ReportStack = createStackNavigator(
   {
-    
     Home: HomeScreen,
     Report: ReportScreen,
     ThankYou: ThankYouScreen,
@@ -24,9 +23,9 @@ const ReportStack = createStackNavigator(
     }),
   },
 );
-const SpeciesStack = createStackNavigator(
+const ResultStack = createStackNavigator(
   {
-    Species: SpeciesScreen,
+    Results: ResultsScreen,
   },
   {
     navigationOptions: ({ navigation }) => ({
@@ -38,7 +37,7 @@ const SpeciesStack = createStackNavigator(
 export default createBottomTabNavigator(
   {
     Report: ReportStack,
-    Species: SpeciesStack,
+    Results: ResultStack,
   },
   {
     navigationOptions: ({ navigation }) => ({
@@ -49,7 +48,7 @@ export default createBottomTabNavigator(
           case 'Report':
             iconName = `ios-calendar`;
             break;
-          case 'Species':
+          case 'Results':
             iconName = `ios-map`;
             break;
           default:

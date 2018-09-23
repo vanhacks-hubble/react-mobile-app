@@ -31,18 +31,6 @@ const ReportForm = ({ handleInputText, resetForm, submitReport }) => {
           />
         </View>
       </View>
-      <View>
-        <Text styles={styles.inputTitle}>Please Describe the Misuse</Text>
-        <TextInput
-          style={styles.comment}
-          placeholder="Comments"
-          multiline={true}
-          numberOfLines={6}
-          onChangeText={text => {
-            handleInputText('Comment', text);
-          }}
-        />
-      </View>
       <View style={styles.buttonContainer}>
         <Button title="Reset" onPress={() => resetForm()} />
         <Button title="Submit" onPress={() => submitReport()} />
