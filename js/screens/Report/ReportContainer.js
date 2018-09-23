@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import Report from './Report';
-<<<<<<< HEAD
-// import axios from 'axios';
-=======
->>>>>>> master
 
 export default class ReportContainer extends Component {
   static navigationOptions = {

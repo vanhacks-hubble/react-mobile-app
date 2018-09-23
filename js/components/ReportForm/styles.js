@@ -50,14 +50,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 60,
-<<<<<<< HEAD
     borderWidth:1,
     borderColor: colors.white
 
-=======
-    borderWidth: 1,
-    borderColor: 'white',
->>>>>>> master
   },
   buttonText: {
     alignItems: 'center',

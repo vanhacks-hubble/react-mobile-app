@@ -31,7 +31,6 @@ const ReportForm = ({ handleInputText, resetForm, submitReport }) => {
           />
         </View>
       </View>
-<<<<<<< HEAD
       <View style={styles.buttonWrapper}>
         <TouchableOpacity onPress={() => resetForm()} style={styles.button}>
           <Text style={styles.buttonText}>RESET</Text>
@@ -39,11 +38,6 @@ const ReportForm = ({ handleInputText, resetForm, submitReport }) => {
         <TouchableOpacity onPress={() => submitReport()} style={styles.button}>
           <Text style={styles.buttonText}>SUBMIT</Text>
         </TouchableOpacity>
-=======
-      <View style={styles.buttonContainer}>
-        <Button title="Reset" onPress={() => resetForm()} />
-        <Button title="Submit" onPress={() => submitReport()} />
->>>>>>> master
       </View>
     </View>
   );
