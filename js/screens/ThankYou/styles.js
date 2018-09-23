@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    alignItems: 'center',
   },
   image: {
     width: width * 0.5,
@@ -24,6 +23,14 @@ const styles = StyleSheet.create({
   title: {
     marginTop: 16,
     fontSize: 32,
+    textAlign: 'center',
+  },
+  buttonText: {
+    fontSize: 20,
+    fontWeight: '600',
+  },
+  button: {
+    marginTop: 20,
   },
   slogan: {
     fontSize: 16,

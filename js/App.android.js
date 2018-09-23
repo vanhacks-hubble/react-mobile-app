@@ -1,9 +1,16 @@
 import React, { Component, Fragment } from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar, PermissionsAndroid, Platform } from 'react-native';
 import RootStack from './navigation/RootStackNavigation';
 import { colors } from './config/styles';
 
 export default class App extends Component {
+  componentDidMount() {
+    // console.log('android');
+    // PermissionsAndroid.request('android.permission.ACCESS_FINE_LOCATION', {
+    //   title: 'Location',
+    //   message: 'We use your location for better accuracy',
+    // });
+  }
   render() {
     return (
       <Fragment>
