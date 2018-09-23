@@ -30,7 +30,7 @@ const ReportForm = ({ handleInputText, resetForm, submitReport }) => {
           }}
         />
       </View>
-      <View>
+      <View style={styles.buttonContainer}>
         <Button title="Reset" onPress={() => resetForm()} />
         <Button title="Submit" onPress={() => submitReport()} />
       </View>
