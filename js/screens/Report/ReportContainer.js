@@ -49,15 +49,10 @@ export default class ReportContainer extends Component {
     const report = {
       image_data: this.state.imageurl,
       name: this.state.businessName,
-      // location: [
-      //   this.state.location.coords.latitude,
-      //   this.state.location.coords.longitude,
-      // ],
-       location: [
-        49.24328535
-        -123.1013584,
+      location: [
+        this.state.location.coords.latitude,
+        this.state.location.coords.longitude,
       ],
-      //location: [-123.1252643, 49.2806589],
       comment: this.state.comment,
     };
     fetch('https://vanhacks-hubble.herokuapp.com/events', {
