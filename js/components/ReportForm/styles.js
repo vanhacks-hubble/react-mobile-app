@@ -10,30 +10,31 @@ const styles = StyleSheet.create({
 
     // justifyContent: 'flex-end',
   },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
   textInputContainer: {
     padding: 24,
   },
   inputTitle: {
     color: colors.primary,
     paddingVertical: 12,
-    fontWeight: "600"
-
-
+    fontWeight: '600',
   },
   businessName: {
     backgroundColor: colors.white,
     borderWidth: 1,
-    borderColor: "grey",
-    padding: 12
+    borderColor: 'grey',
+    padding: 12,
   },
 
   comment: {
     backgroundColor: colors.white,
     borderWidth: 1,
-    borderColor: "grey",
+    borderColor: 'grey',
     padding: 12,
-    height: 80
-
+    height: 80,
   },
   buttonWrapper: {
     flexDirection: 'row',
@@ -49,9 +50,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 60,
-    borderWidth:1,
-    borderColor: "white"
-
+    borderWidth: 1,
+    borderColor: 'white',
   },
   buttonText: {
     alignItems: 'center',
