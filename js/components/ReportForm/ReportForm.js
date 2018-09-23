@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextInput, View, Text, TouchableOpacity } from 'react-native';
-import { Button } from 'react-native-elements';
+// import { Button } from 'react-native-elements';
 import styles from './styles';
 const ReportForm = ({ handleInputText, resetForm, submitReport }) => {
   return (
@@ -31,21 +31,13 @@ const ReportForm = ({ handleInputText, resetForm, submitReport }) => {
           />
         </View>
       </View>
-      <View>
-        <Text styles={styles.inputTitle}>Please Describe the Misuse</Text>
-        <TextInput
-          style={styles.comment}
-          placeholder="Comments"
-          multiline={true}
-          numberOfLines={6}
-          onChangeText={text => {
-            handleInputText('Comment', text);
-          }}
-        />
-      </View>
-      <View style={styles.buttonContainer}>
-        <Button title="Reset" onPress={() => resetForm()} />
-        <Button title="Submit" onPress={() => submitReport()} />
+      <View style={styles.buttonWrapper}>
+        <TouchableOpacity onPress={() => resetForm()} style={styles.button}>
+          <Text style={styles.buttonText}>RESET</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => submitReport()} style={styles.button}>
+          <Text style={styles.buttonText}>SUBMIT</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

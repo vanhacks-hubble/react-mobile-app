@@ -45,12 +45,12 @@ const styles = StyleSheet.create({
     width: width / 2,
     marginHorizontal: 0,
     paddingHorizontal: 0,
-    backgroundColor: 'blue',
+    backgroundColor: colors.secondary,
     justifyContent: 'center',
     alignItems: 'center',
     height: 60,
     borderWidth:1,
-    borderColor: "white"
+    borderColor: colors.white
 
   },
   buttonText: {
