@@ -49,6 +49,7 @@ class Report extends Component {
           animationType="slide"
           transparent={true}
           visible={chosenImage !== null}
+          onRequestClose={()=>{}}
         >
           <View style={{ marginTop: 22 }}>
             <View>
