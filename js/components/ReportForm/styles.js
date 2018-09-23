@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     width: width / 2,
     marginHorizontal: 0,
     paddingHorizontal: 0,
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
     height: 60,
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   buttonText: {
     alignItems: 'center',
     color: 'white',
-    fontSize: 12,
+    fontSize: 16,
   },
 });
 
