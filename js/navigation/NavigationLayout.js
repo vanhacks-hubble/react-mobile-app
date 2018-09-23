@@ -46,7 +46,7 @@ export default createBottomTabNavigator(
         let iconName;
         switch (routeName) {
           case 'Report':
-            iconName = `ios-calendar`;
+            iconName = `ios-filing`;
             break;
           case 'Results':
             iconName = `ios-map`;
@@ -62,7 +62,7 @@ export default createBottomTabNavigator(
     }),
     tabBarOptions: {
       activeTintColor: 'white',
-      inactiveTintColor: 'grey',
+      inactiveTintColor: 'rgba(255,255,255,0.25)',
       labelStyle: {
         fontSize: 16,
       },
