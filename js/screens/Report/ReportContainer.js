@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Report from './Report';
+import axios from 'axios';
 
 export default class ReportContainer extends Component {
   static navigationOptions = {
@@ -34,7 +35,7 @@ export default class ReportContainer extends Component {
   };
 
   _handleImage = base64 => {
-    const imageurl = `data:image/*;base64, ${base64}`;
+    const imageurl = base64;
     this._setLocationData();
     this.setState({ imageurl });
   };
@@ -50,13 +51,28 @@ export default class ReportContainer extends Component {
       image_data: this.state.imageurl,
       name: this.state.businessName,
       location: [
-        this.state.location.coords.longitude,
         this.state.location.coords.latitude,
+        this.state.location.coords.longitude,
       ],
       comment: this.state.comment,
     };
     console.log(report);
-    this._resetForm();
+    const promise = new Promise((resolve, reject) => {
+      let xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://vanhacks-hubble.herokuapp.com/events', true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify(report));
+      resolve();
+    });
+    promise.then(
+      res => {
+        console.log(res);
+        //this._resetForm();
+      },
+      rej => {
+        console.log(rej);
+      },
+    );
   };
 
   render() {

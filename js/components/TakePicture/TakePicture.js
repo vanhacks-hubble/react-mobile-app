@@ -25,7 +25,7 @@ class TakePicture extends Component {
         <View style={styles.placeholder}>
           {this.props.chosenImage && (
             <Image
-              source={{ uri: this.props.chosenImage }}
+              source={{ uri: `data:image/*;base64,${this.props.chosenImage}` }}
               style={styles.previewImage}
             />
           )}
