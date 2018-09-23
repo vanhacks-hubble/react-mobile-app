@@ -10,15 +10,26 @@ export default class ReportContainer extends Component {
 
     this.state = {
       imageurl: null,
+      businessName: null,
       location: null,
-      name: null,
       comment: null,
     };
   }
 
-  _resetImage = () => {
+  _handleInputText(field, text){
+    if(field === "BusinessName"){
+      this.setState({businessName})
+    } else if(field === "Comment"){ 
+      this.setState({comment})
+    }
+  }
+
+  _resetForm = () => {
     this.setState({
       imageurl: null,
+      businessName: null,
+      location: null,
+      comment: null,
     });
   };
 
@@ -30,9 +41,10 @@ export default class ReportContainer extends Component {
   render() {
     return (
       <Report
-        resetImage={this._resetImage}
+        resetForm={this._resetForm}
         handleImage={str => this._handleImage(str)}
         chosenImage={this.state.imageurl}
+        handleInputText={(field, text) => this._handleInputText(field, text)}
       />
     );
   }
