@@ -19,8 +19,8 @@ class Report extends Component {
     });
   };
 
-  componentDidMount(){
-    this._pickImageHandler()
+  componentDidMount() {
+    this._pickImageHandler();
   }
   render() {
     const {
@@ -42,7 +42,7 @@ class Report extends Component {
         </View>
         <View style={styles.button}>
           {!chosenImage && (
-            <Button title="Pick Image" onPress={this._pickImageHandler } />
+            <Button title="Pick Image" onPress={this._pickImageHandler} />
           )}
         </View>
         <Modal

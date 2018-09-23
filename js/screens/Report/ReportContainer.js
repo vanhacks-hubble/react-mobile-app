@@ -53,6 +53,7 @@ export default class ReportContainer extends Component {
         this.state.location.coords.latitude,
         this.state.location.coords.longitude,
       ],
+      //location: [-123.1252643, 49.2806589],
       comment: this.state.comment,
     };
     fetch('https://vanhacks-hubble.herokuapp.com/events', {
