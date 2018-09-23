@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import ThankYou from './ThankYou';
-const image = require('../../assets/oceanWiseLogoBlue.png');
 class ThankYouContainer extends Component {
   static navigationOptions = {
     title: 'Ocean Wise',
   };
   render() {
     return (
-      <ThankYou
-        slogan={'Ensuring Healthy Oceans for Generations to Come'}
-        image={image}
-      />
+      <ThankYou slogan={'Ensuring Healthy Oceans for Generations to Come'} />
     );
   }
 }

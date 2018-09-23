@@ -6,10 +6,7 @@ const styles = StyleSheet.create({
   root: {
     backgroundColor: 'white',
     height: height * 0.535,
-    // marginTop: height * 0.465,
     marginTop: height * 0.498,
-
-    // justifyContent: 'flex-end',
   },
   buttonContainer: {
     flexDirection: 'row',
@@ -51,9 +48,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 60,
-    borderWidth:1,
-    borderColor: colors.white
-
+    borderWidth: 1,
+    borderColor: colors.white,
   },
   buttonText: {
     alignItems: 'center',
