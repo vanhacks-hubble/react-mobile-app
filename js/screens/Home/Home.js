@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, PermissionsAndroid } from 'react-native';
 import styles from './styles';
 import { Button } from 'react-native-elements';
 import { colors } from '../../config/styles';
@@ -20,7 +20,9 @@ const Home = ({ navigation }) => {
       <Button
         title={'Report Now'}
         backgroundColor={colors.primary}
-        onPress={() => navigation.navigate('Report')}
+        onPress={() => {
+          navigation.navigate('Report');
+        }}
         textStyle={styles.buttonText}
       />
     </View>

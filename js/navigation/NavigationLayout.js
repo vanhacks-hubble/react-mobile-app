@@ -6,7 +6,6 @@ import {
 } from 'react-navigation';
 import { sharedNavigationOptions } from './config';
 import ReportScreen from '../screens/Report';
-import ResultsScreen from '../screens/ReportResults';
 import HomeScreen from '../screens/Home';
 import ThankYouScreen from '../screens/ThankYou/';
 import { colors } from '../config/styles';
@@ -23,21 +22,10 @@ const ReportStack = createStackNavigator(
     }),
   },
 );
-const ResultStack = createStackNavigator(
-  {
-    Results: ResultsScreen,
-  },
-  {
-    navigationOptions: ({ navigation }) => ({
-      ...sharedNavigationOptions(navigation),
-    }),
-  },
-);
 
 export default createBottomTabNavigator(
   {
     Report: ReportStack,
-    Results: ResultStack,
   },
   {
     navigationOptions: ({ navigation }) => ({
@@ -48,16 +36,11 @@ export default createBottomTabNavigator(
           case 'Report':
             iconName = `ios-filing`;
             break;
-          case 'Results':
-            iconName = `ios-map`;
-            break;
           default:
-            iconName = `ios-bug`;
+            iconName = `ios-filing`;
             break;
         }
-        // You can return any component that you like here! We usually use an
-        // icon component from react-native-vector-icons
-        return <Ionicons name={iconName} size={25} color={tintColor} />;
+        //return <Ionicons name={iconName} size={25} color={tintColor} />;
       },
     }),
     tabBarOptions: {
@@ -65,9 +48,11 @@ export default createBottomTabNavigator(
       inactiveTintColor: 'rgba(255,255,255,0.25)',
       labelStyle: {
         fontSize: 16,
+        opacity: 0,
       },
       style: {
         backgroundColor: colors.primary,
+        height: 0,
         shadowColor: 'black',
         shadowOffset: {
           height: -2,
