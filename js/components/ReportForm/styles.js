@@ -5,8 +5,9 @@ const { height, width } = Dimensions.get('window');
 const styles = StyleSheet.create({
   root: {
     backgroundColor: 'white',
-    height: height * 0.5,
-    marginTop: height * 0.5,
+    height: height * 0.535,
+    // marginTop: height * 0.465,
+    marginTop: height * 0.498,
 
     // justifyContent: 'flex-end',
   },
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-end',
-    marginHorizontal: 20,
+    // paddingVertical: 20,
   },
   button: {
     width: width / 2,
