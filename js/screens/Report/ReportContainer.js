@@ -65,8 +65,8 @@ export default class ReportContainer extends Component {
       body: JSON.stringify(report),
     })
       .then(response => {
-        console.log(response.json());
         this._resetForm();
+        this.props.navigation.navigate('ThankYou');
       })
       .catch(err => console.log(err));
   };
@@ -79,6 +79,10 @@ export default class ReportContainer extends Component {
         chosenImage={this.state.imageurl}
         handleInputText={(field, text) => this._handleInputText(field, text)}
         submitReport={this._submitReport}
+        formValues={{
+          businessName: this.state.businessName,
+          comment: this.state.comment,
+        }}
       />
     );
   }
