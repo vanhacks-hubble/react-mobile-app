@@ -42,8 +42,8 @@ class TakePicture extends Component {
         >
           <View style={{ marginTop: 22 }}>
             <View>
-              <ReportForm />
-              <Button title="Reset" onPress={() => this.props.resetImage()} />
+              <ReportForm  handleInputText={this.props.handleInputText} resetForm={this.props.resetForm}/>
+              {/* <Button title="Reset" onPress={() => this.props.resetImage()} /> */}
             </View>
           </View>
         </Modal>
