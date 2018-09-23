@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Report from './Report';
+<<<<<<< HEAD
 // import axios from 'axios';
+=======
+>>>>>>> master
 
 export default class ReportContainer extends Component {
   static navigationOptions = {
@@ -56,23 +59,20 @@ export default class ReportContainer extends Component {
       ],
       comment: this.state.comment,
     };
-    console.log(report);
-    const promise = new Promise((resolve, reject) => {
-      let xhr = new XMLHttpRequest();
-      xhr.open('POST', 'https://vanhacks-hubble.herokuapp.com/events', true);
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.send(JSON.stringify(report));
-      resolve();
-    });
-    promise.then(
-      res => {
-        console.log(res);
-        //this._resetForm();
+    fetch('https://vanhacks-hubble.herokuapp.com/events', {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
       },
-      rej => {
-        console.log(rej);
-      },
-    );
+      body: JSON.stringify(report),
+    })
+      .then(response => {
+        this._resetForm();
+        this.props.navigation.navigate('ThankYou');
+      })
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -83,6 +83,10 @@ export default class ReportContainer extends Component {
         chosenImage={this.state.imageurl}
         handleInputText={(field, text) => this._handleInputText(field, text)}
         submitReport={this._submitReport}
+        formValues={{
+          businessName: this.state.businessName,
+          comment: this.state.comment,
+        }}
       />
     );
   }
