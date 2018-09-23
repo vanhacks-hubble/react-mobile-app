@@ -16,11 +16,11 @@ export default class ReportContainer extends Component {
     };
   }
 
-  _handleInputText(field, text){
-    if(field === "BusinessName"){
-      this.setState({businessName})
-    } else if(field === "Comment"){ 
-      this.setState({comment})
+  _handleInputText(field, text) {
+    if (field === 'BusinessName') {
+      this.setState({ businessName: text });
+    } else if (field === 'Comment') {
+      this.setState({ comment: text });
     }
   }
 
@@ -35,7 +35,28 @@ export default class ReportContainer extends Component {
 
   _handleImage = base64 => {
     const imageurl = `data:image/*;base64, ${base64}`;
+    this._setLocationData();
     this.setState({ imageurl });
+  };
+  _setLocationData = () => {
+    const onSuccess = data => {
+      this.setState({ location: data });
+    };
+    navigator.geolocation.getCurrentPosition(onSuccess);
+  };
+
+  _submitReport = () => {
+    const report = {
+      image_data: this.state.imageurl,
+      name: this.state.businessName,
+      location: [
+        this.state.location.coords.longitude,
+        this.state.location.coords.latitude,
+      ],
+      comment: this.state.comment,
+    };
+    console.log(report);
+    this._resetForm();
   };
 
   render() {
@@ -45,6 +66,7 @@ export default class ReportContainer extends Component {
         handleImage={str => this._handleImage(str)}
         chosenImage={this.state.imageurl}
         handleInputText={(field, text) => this._handleInputText(field, text)}
+        submitReport={this._submitReport}
       />
     );
   }
